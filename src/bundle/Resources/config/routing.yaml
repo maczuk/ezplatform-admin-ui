@@ -721,6 +721,10 @@ ezplatform.udw.location.data:
     options:
         expose: true
     defaults:
+        offset: 0
+        limit: 25
+        sortClause: 'DatePublished'
+        sortOrder: 'ascending'
         _controller: 'EzPlatformAdminUiBundle:UniversalDiscovery:location'
 
 ezplatform.udw.location_gridview.data:
@@ -728,6 +732,10 @@ ezplatform.udw.location_gridview.data:
     options:
         expose: true
     defaults:
+        offset: 0
+        limit: 25
+        sortClause: 'DatePublished'
+        sortOrder: 'ascending'
         _controller: 'EzPlatformAdminUiBundle:UniversalDiscovery:locationGridView'
 
 ezplatform.udw.accordion.data:
@@ -735,6 +743,10 @@ ezplatform.udw.accordion.data:
     options:
         expose: true
     defaults:
+        offset: 0
+        limit: 25
+        sortClause: 'DatePublished'
+        sortOrder: 'ascending'
         _controller: 'EzPlatformAdminUiBundle:UniversalDiscovery:accordion'
 
 ezplatform.udw.accordion_gridview.data:
@@ -742,6 +754,10 @@ ezplatform.udw.accordion_gridview.data:
     options:
         expose: true
     defaults:
+        offset: 0
+        limit: 25
+        sortClause: 'DatePublished'
+        sortOrder: 'ascending'
         _controller: 'EzPlatformAdminUiBundle:UniversalDiscovery:accordionGridView'
 
 #
