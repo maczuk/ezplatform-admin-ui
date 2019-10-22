@@ -35,10 +35,13 @@ class AuthenticationContext extends BusinessContext
      */
     public function iAmLoggedAs(string $username): void
     {
-        $this->utilityContext->setMinkParameter('base_url', 'admin-ezenv.local');
+        //$this->utilityContext->setMinkParameter('base_url', 'admin-ezenv.local');
 
         $loginPage = PageObjectFactory::createPage($this->utilityContext, LoginPage::PAGE_NAME);
-        $loginPage->open();
+        //$loginPage->open();
+
+        $this->utilityContext->getSession()->visit('http://admin-ezenv.local/');
+
         print_r('CURRENT URL - ' . $this->utilityContext->getSession()->getCurrentUrl());
 
         if (!\array_key_exists($username, $this->userCredentials)) {
