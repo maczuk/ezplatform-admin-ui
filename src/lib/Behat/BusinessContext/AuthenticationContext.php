@@ -7,7 +7,7 @@
 namespace EzSystems\EzPlatformAdminUi\Behat\BusinessContext;
 
 use EzSystems\EzPlatformAdminUi\Behat\PageObject\LoginPage;
-use EzSystems\Behat\Browser\Factory\PageObjectFactory;
+use EzSystems\EzPlatformAdminUi\Behat\PageObject\PageObjectFactory;
 use OutOfBoundsException;
 
 /** Context for authentication actions */
