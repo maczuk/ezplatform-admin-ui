@@ -37,6 +37,7 @@ class AuthenticationContext extends BusinessContext
     {
         $loginPage = PageObjectFactory::createPage($this->utilityContext, LoginPage::PAGE_NAME);
         $loginPage->open();
+        print_r('CURRENT URL - ' . $this->utilityContext->getSession()->getCurrentUrl());
 
         if (!\array_key_exists($username, $this->userCredentials)) {
             throw new OutOfBoundsException('Login is not recognised');
