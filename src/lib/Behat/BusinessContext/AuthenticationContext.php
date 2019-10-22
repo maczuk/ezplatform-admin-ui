@@ -45,5 +45,6 @@ class AuthenticationContext extends BusinessContext
 
         $password = $this->userCredentials[$username];
         $loginPage->login($username, $password);
+        print_r('CURRENT URL - ' . $this->utilityContext->getSession()->getCurrentUrl());
     }
 }
