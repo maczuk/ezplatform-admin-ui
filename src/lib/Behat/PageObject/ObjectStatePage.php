@@ -29,7 +29,7 @@ class ObjectStatePage extends Page
         parent::__construct($context);
         $this->adminList = ElementFactory::createElement($this->context, AdminList::ELEMENT_NAME, self::PAGE_NAME . ' Information', SimpleTable::ELEMENT_NAME);
         $this->objectStateName = $objectStateName;
-        $this->route = '/admin/state/state';
+        $this->route = $this->adminURIPath . '/state/state';
         $this->pageTitle = sprintf('Object State: %s', $objectStateName);
         $this->pageTitleLocator = '.ez-header h1';
     }

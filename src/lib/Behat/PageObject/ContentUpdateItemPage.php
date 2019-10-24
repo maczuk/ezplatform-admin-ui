@@ -14,9 +14,6 @@ use PHPUnit\Framework\Assert;
 
 class ContentUpdateItemPage extends Page
 {
-    /** @var string Route under which the Page is available */
-    protected $route = '/admin/content';
-
     /** @var string Name by which Page is recognised */
     public const PAGE_NAME = 'Content Update';
 
@@ -33,6 +30,7 @@ class ContentUpdateItemPage extends Page
     public function __construct(UtilityContext $context, string $contentItemName)
     {
         parent::__construct($context);
+        $this->route = $this->adminURIPath . '/content';
         $this->contentUpdateForm = ElementFactory::createElement($this->context, ContentUpdateForm::ELEMENT_NAME);
         $this->rightMenu = ElementFactory::createElement($this->context, RightMenu::ELEMENT_NAME);
         $this->pageTitleLocator = '.ez-content-edit-container h1';

@@ -26,7 +26,7 @@ class ContentTypeGroupPage extends Page
     public function __construct(UtilityContext $context, string $groupName)
     {
         parent::__construct($context);
-        $this->route = '/admin/contenttypegroup/';
+        $this->route = $this->adminURIPath . '/contenttypegroup/';
         $this->groupName = $groupName;
         $this->adminList = ElementFactory::createElement($this->context, AdminList::ELEMENT_NAME, sprintf('Content Types in %s', $this->groupName), IconLinkedListTable::ELEMENT_NAME);
         $this->pageTitle = $groupName;

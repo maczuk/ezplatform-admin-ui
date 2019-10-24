@@ -36,7 +36,7 @@ class ContentItemPage extends Page
     public function __construct(UtilityContext $context, string $contentName)
     {
         parent::__construct($context);
-        $this->route = '/admin/content/location';
+        $this->route = $this->adminURIPath . '/content/location';
         $this->rightMenu = ElementFactory::createElement($context, RightMenu::ELEMENT_NAME);
         $this->subItemList = ElementFactory::createElement($context, SubItemsList::ELEMENT_NAME);
         $this->contentField = ElementFactory::createElement($context, ContentField::ELEMENT_NAME);

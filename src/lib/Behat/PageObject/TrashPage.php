@@ -32,7 +32,7 @@ class TrashPage extends Page
     public function __construct(UtilityContext $context)
     {
         parent::__construct($context);
-        $this->route = '/admin/trash/list';
+        $this->route = $this->adminURIPath . '/trash/list';
         $this->trashTable = ElementFactory::createElement($this->context, TrashTable::ELEMENT_NAME, $this::ITEM_RESTORE_LIST_CONTAINER);
         $this->dialog = ElementFactory::createElement($this->context, Dialog::ELEMENT_NAME);
         $this->pageTitle = 'Trash';

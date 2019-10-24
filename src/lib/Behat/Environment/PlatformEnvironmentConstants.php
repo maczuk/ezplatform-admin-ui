@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
+namespace EzSystems\EzPlatformAdminUi\Behat\Environment;
+
+class PlatformEnvironmentConstants
+{
+    /** @var string[] */
+    public $values;
+    private $adminURIKey = "ADMIN_URI";
+    private $defaultAdminURI = "admin";
+
+    public function __construct()
+    {
+        $adminUri = (getenv($this->adminURIKey)) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
+
+        $this->values = [
+            'ROOT_CONTENT_NAME' => 'eZ Platform',
+            'ROOT_CONTENT_TYPE' => 'Folder',
+            'ARTICLE_MAIN_FIELD_NAME' => 'Intro',
+            'CREATE_REGISTRATION_ROLE_POLICIES' => 'user/login,content/read',
+            'REGISTRATION_CONFIRMATION_MESSAGE' => 'Your account has been created',
+            $this->adminURIKey => $adminUri
+        ];
+    }
+}

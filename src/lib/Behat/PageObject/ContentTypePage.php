@@ -44,7 +44,7 @@ class ContentTypePage extends Page
     {
         parent::__construct($context);
         $this->groupName = $contentTypeName;
-        $this->route = '/admin/contenttypegroup/';
+        $this->route = $this->adminURIPath . '/contenttypegroup/';
 
         $this->contentTypeAdminList = ElementFactory::createElement(
             $this->context,

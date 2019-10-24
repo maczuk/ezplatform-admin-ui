@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformAdminUi\Behat\PageObject;
 
+use EzSystems\EzPlatformAdminUi\Behat\Helper\EzEnvironmentConstants;
 use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
 use PHPUnit\Framework\Assert;
 
@@ -19,6 +20,9 @@ abstract class Page
     /** @var string title that we see directly below upper menu */
     protected $pageTitle;
 
+    /** @var string admin URI element */
+    protected $adminURIPath;
+
     /** @var UtilityContext context for interactions with the page */
     protected $context;
 
@@ -31,6 +35,7 @@ abstract class Page
     public function __construct(UtilityContext $context)
     {
         $this->context = $context;
+        $this->adminURIPath = '/' . EzEnvironmentConstants::get("ADMIN_URI");
     }
 
     /**
