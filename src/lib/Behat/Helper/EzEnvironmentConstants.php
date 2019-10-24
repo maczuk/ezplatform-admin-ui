@@ -33,6 +33,7 @@ class EzEnvironmentConstants
 
     private static function getProperEnvironment(int $installType)
     {
+        print_r($installType);
         switch ($installType) {
             case InstallType::PLATFORM:
                 return new PlatformEnvironmentConstants();
