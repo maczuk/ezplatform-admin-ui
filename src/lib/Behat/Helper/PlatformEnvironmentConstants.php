@@ -17,7 +17,7 @@ class PlatformEnvironmentConstants
     {
         print_r('ADMIN_URI: ' . getenv($this->adminURIKey) . ' | ');
 
-        $adminUri = (getenv($this->adminURIKey)) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
+        $adminUri = (getenv($this->adminURIKey) != false) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
 
         print_r('adminUri: ' . $adminUri . ' | ');
 
