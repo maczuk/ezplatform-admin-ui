@@ -42,7 +42,7 @@ class AuthenticationContext extends BusinessContext
 
         $this->utilityContext->getSession()->visit('http://admin-ezenv.local/');
 
-        print_r('CURRENT URL - ' . $this->utilityContext->getSession()->getCurrentUrl());
+        print_r(' | CURRENT URL: ' . $this->context->getSession()->getCurrentUrl() .'; CURRENT ROUTE: ' . $this->route . ' | ');
 
         if (!\array_key_exists($username, $this->userCredentials)) {
             throw new OutOfBoundsException('Login is not recognised');
@@ -50,6 +50,7 @@ class AuthenticationContext extends BusinessContext
 
         $password = $this->userCredentials[$username];
         $loginPage->login($username, $password);
-        print_r('CURRENT URL - ' . $this->utilityContext->getSession()->getCurrentUrl());
+        print_r(' | CURRENT URL: ' . $this->context->getSession()->getCurrentUrl() .'; CURRENT ROUTE: ' . $this->route . ' | ');
+
     }
 }
