@@ -15,9 +15,9 @@ class PlatformEnvironmentConstants
 
     public function __construct()
     {
-        print_r('ADMIN_URI: ' . getenv($this->adminURIKey) . ' | ');
+        print_r('ADMIN_URI: ' . ( getenv($this->adminURIKey) ? getenv($this->adminURIKey) : 'false' ) . ' | ');
 
-        $adminUri = (getenv($this->adminURIKey)) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
+        $adminUri = (getenv($this->adminURIKey) !== false ) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
 
         print_r('adminUri: ' . $adminUri . ' | ');
 
