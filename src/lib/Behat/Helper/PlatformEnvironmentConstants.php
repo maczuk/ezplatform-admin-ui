@@ -15,7 +15,11 @@ class PlatformEnvironmentConstants
 
     public function __construct()
     {
+        print_r('ADMIN_URI: ' . getenv($this->adminURIKey) . ' | ');
+
         $adminUri = (getenv($this->adminURIKey)) ? getenv($this->adminURIKey) : $this->defaultAdminURI;
+
+        print_r('adminUri: ' . $adminUri . ' | ');
 
         $this->values = [
             'ROOT_CONTENT_NAME' => 'eZ Platform',
@@ -25,5 +29,7 @@ class PlatformEnvironmentConstants
             'REGISTRATION_CONFIRMATION_MESSAGE' => 'Your account has been created',
             $this->adminURIKey => $adminUri,
         ];
+
+        print_r('adminUri: ' . $this->values[$this->adminURIKey] . ' | ');
     }
 }
