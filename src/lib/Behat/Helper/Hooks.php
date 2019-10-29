@@ -11,6 +11,7 @@ use Behat\Behat\Hook\Scope\AfterScenarioScope;
 use Behat\Behat\Hook\Scope\AfterStepScope;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Hook\Scope\BeforeStepScope;
+use Behat\Testwork\Hook\Scope\BeforeSuiteScope;
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Symfony2Extension\Context\KernelDictionary;
@@ -35,6 +36,25 @@ class Hooks extends RawMinkContext
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
+    }
+
+    /** @BeforeScenario
+     */
+    public function setCustomBaseUrl(BeforeScenarioScope $scope)
+    {
+        $environment = $scope->getEnvironment();
+
+        foreach ($environment->getContexts() as $context) {
+            if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
+                $customBaseUrl = getenv("BASE_URL");
+                print_r($customBaseUrl);
+                if (!empty($customBaseUrl))
+                {
+
+                    $context->setMinkParameter('base_url', $customBaseUrl);
+                }
+            }
+        }
     }
 
     /** @BeforeScenario

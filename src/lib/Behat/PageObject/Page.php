@@ -35,7 +35,7 @@ abstract class Page
     public function __construct(UtilityContext $context)
     {
         $this->context = $context;
-        $this->adminURIPath = '/' . EzEnvironmentConstants::get("ADMIN_URI");
+        $this->adminURIPath = (empty(EzEnvironmentConstants::get("ADMIN_URI"))) ? '' : '/' . EzEnvironmentConstants::get("ADMIN_URI");
     }
 
     /**
