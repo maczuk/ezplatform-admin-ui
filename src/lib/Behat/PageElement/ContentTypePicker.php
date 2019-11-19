@@ -17,7 +17,7 @@ class ContentTypePicker extends Element
     {
         parent::__construct($context);
         $this->fields = [
-            'contentTypeSelector' => '.form-check-label',
+            'contentTypeSelector' => '.ez-extra-actions--create .form-check-label',
         ];
     }
 
