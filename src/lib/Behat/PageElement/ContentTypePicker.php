@@ -24,5 +24,7 @@ class ContentTypePicker extends Element
     public function select(string $contentType): void
     {
         $this->context->getElementByText($contentType, $this->fields['contentTypeSelector'])->click();
+        sleep(2);
+        $this->context->getElementByText($contentType, $this->fields['contentTypeSelector'])->click();
     }
 }
