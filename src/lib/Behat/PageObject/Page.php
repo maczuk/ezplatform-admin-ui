@@ -67,8 +67,6 @@ abstract class Page
      */
     public function verifyRoute(): void
     {
-        print_r(' | CURRENT URL: ' . $this->context->getSession()->getCurrentUrl() .'; CURRENT ROUTE: ' . $this->route . ' | ');
-
         $this->context->waitUntil($this->defaultTimeout, function () {
             return false !== strpos($this->context->getSession()->getCurrentUrl(), $this->route);
         });
