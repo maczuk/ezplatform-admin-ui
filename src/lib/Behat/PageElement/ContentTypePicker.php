@@ -17,12 +17,12 @@ class ContentTypePicker extends Element
     {
         parent::__construct($context);
         $this->fields = [
-            'contentTypeSelector' => '.ez-extra-actions--create .form-check-label',
+            'contentTypeSelector' => '.form-check-label',
         ];
     }
 
     public function select(string $contentType): void
     {
-        $this->context->getElementPositionByText($contentType, $this->fields['contentTypeSelector']);
+        $this->context->getElementPositionByText($contentType, $this->fields['contentTypeSelector'])->click();
     }
 }

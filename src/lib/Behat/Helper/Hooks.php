@@ -47,10 +47,8 @@ class Hooks extends RawMinkContext
         foreach ($environment->getContexts() as $context) {
             if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
                 $customBaseUrl = getenv("BASE_URL");
-                print_r($customBaseUrl);
                 if (!empty($customBaseUrl))
                 {
-                    print_r("OLD BASE URL: " . $context->getMinkParameter('base_url') . ' | ');
                     $context->setMinkParameter('base_url', $customBaseUrl);
                 }
             }
