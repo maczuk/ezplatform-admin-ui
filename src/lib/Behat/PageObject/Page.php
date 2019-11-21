@@ -72,11 +72,6 @@ abstract class Page
         });
     }
 
-    public function getRoute(): string
-    {
-        return $this->route;
-    }
-
     public function verifyTitle(): void
     {
         Assert::assertEquals(
