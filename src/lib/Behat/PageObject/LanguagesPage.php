@@ -26,7 +26,8 @@ class LanguagesPage extends Page
     {
         parent::__construct($context);
         $this->adminList = ElementFactory::createElement($this->context, AdminList::ELEMENT_NAME, self::PAGE_NAME, LinkedListTable::ELEMENT_NAME);
-        $this->route = $this->adminURIPath . '/language/list';
+        $this->siteaccess = 'admin';
+        $this->route = '/language/list';
         $this->pageTitle = self::PAGE_NAME;
         $this->pageTitleLocator = '.ez-header h1';
     }

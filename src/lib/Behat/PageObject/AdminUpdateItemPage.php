@@ -30,7 +30,8 @@ class AdminUpdateItemPage extends Page
     public function __construct(UtilityContext $context)
     {
         parent::__construct($context);
-        $this->route = $this->adminURIPath . '/contenttypegroup';
+        $this->siteaccess = 'admin';
+        $this->route = '/contenttypegroup';
         $this->adminUpdateForm = ElementFactory::createElement($this->context, AdminUpdateForm::ELEMENT_NAME);
         $this->rightMenu = ElementFactory::createElement($this->context, RightMenu::ELEMENT_NAME);
         $this->pageTitle = 'Editing';

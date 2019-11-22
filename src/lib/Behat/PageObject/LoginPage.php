@@ -21,7 +21,8 @@ class LoginPage extends Page
     public function __construct(UtilityContext $context)
     {
         parent::__construct($context);
-        $this->route = $this->adminURIPath . '/login';
+        $this->siteaccess = 'admin';
+        $this->route = '/login';
     }
 
     /**

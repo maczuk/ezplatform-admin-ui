@@ -15,6 +15,25 @@ use WebDriver\Exception\ElementNotVisible;
 
 class UtilityContext extends MinkContext
 {
+    /** @var \eZ\Publish\Core\MVC\Symfony\SiteAccess */
+    private $router;
+
+    /**
+     * @injectService $router @ezpublish.siteaccess_router
+     */
+    public function __construct(Router $router)
+    {
+        $this->router = $router;
+    }
+
+    public function reverseMatchRoute($siteAccessName, $route): string
+    {
+        $matcher = $this->router->matchByName($siteAccessName)->matcher;
+        $matcher->setRequest(new SimplifiedRequest(['scheme' => 'http', 'host' => $this->getMinkParameter('base_url'), 'pathinfo' => $route]));
+        $request = $matcher->reverseMatch($siteAccessName)->getRequest();
+        return sprintf('%s://%s%s', $request->scheme, $request->host, $request->pathinfo);
+    }
+
     /**
      * Waits until element is visible. If it does not appear throws exception.
      *

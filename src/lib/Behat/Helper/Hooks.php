@@ -37,22 +37,22 @@ class Hooks extends RawMinkContext
         $this->logger = $logger;
     }
 
-    /** @BeforeScenario
-     */
-    public function setCustomBaseUrl(BeforeScenarioScope $scope)
-    {
-        $environment = $scope->getEnvironment();
-
-        foreach ($environment->getContexts() as $context) {
-            if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
-                $customBaseUrl = getenv("BASE_URL");
-                if (!empty($customBaseUrl))
-                {
-                    $context->setMinkParameter('base_url', $customBaseUrl);
-                }
-            }
-        }
-    }
+//    /** @BeforeScenario
+//     */
+//    public function setCustomBaseUrl(BeforeScenarioScope $scope)
+//    {
+//        $environment = $scope->getEnvironment();
+//
+//        foreach ($environment->getContexts() as $context) {
+//            if ($context instanceof \Behat\MinkExtension\Context\RawMinkContext) {
+//                $customBaseUrl = getenv("BASE_URL");
+//                if (!empty($customBaseUrl))
+//                {
+//                    $context->setMinkParameter('base_url', $customBaseUrl);
+//                }
+//            }
+//        }
+//    }
 
     /** @BeforeScenario
      */

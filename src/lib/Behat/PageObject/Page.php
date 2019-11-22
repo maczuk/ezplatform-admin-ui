@@ -55,7 +55,13 @@ abstract class Page
      */
     public function open(bool $verifyIfLoaded = true): void
     {
-        $this->context->visit($this->route);
+        if (isset($this->siteaccess)) {
+            $url = $this->context->reverseMatchRoute($this->siteaccess, $this->route);
+        } else {
+            $url = $this->route;
+        }
+
+        $this->context->visit($url);
 
         if ($verifyIfLoaded) {
             $this->verifyIsLoaded();

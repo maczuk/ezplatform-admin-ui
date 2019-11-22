@@ -20,7 +20,8 @@ class ContentPreviewPage extends Page
     public function __construct(UtilityContext $context, string $contentName)
     {
         parent::__construct($context);
-        $this->route = $this->adminURIPath . '/content';
+        $this->siteaccess = 'admin';
+        $this->route = '/content';
         $this->pageTitle = 'Previewing: ' . $contentName;
         $this->pageTitleLocator = '.ez-preview__nav .ez-preview__item--description';
         $this->previewNav = ElementFactory::createElement($context, PreviewNav::ELEMENT_NAME);
