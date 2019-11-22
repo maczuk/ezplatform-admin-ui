@@ -12,6 +12,7 @@ use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\MinkExtension\Context\MinkContext;
 use Exception;
 use WebDriver\Exception\ElementNotVisible;
+use eZ\Publish\Core\MVC\Symfony\SiteAccess\Router;
 
 class UtilityContext extends MinkContext
 {
