@@ -18,7 +18,7 @@ class PlatformEnvironmentConstants
             'ROOT_CONTENT_TYPE' => 'Folder',
             'ARTICLE_MAIN_FIELD_NAME' => 'Intro',
             'CREATE_REGISTRATION_ROLE_POLICIES' => 'user/login,content/read',
-            'REGISTRATION_CONFIRMATION_MESSAGE' => 'Your account has been created'
+            'REGISTRATION_CONFIRMATION_MESSAGE' => 'Your account has been created',
         ];
     }
 }
