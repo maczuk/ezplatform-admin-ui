@@ -13,7 +13,7 @@ use Behat\MinkExtension\Context\MinkContext;
 use Exception;
 use WebDriver\Exception\ElementNotVisible;
 use eZ\Publish\Core\MVC\Symfony\SiteAccess\Router;
-use eZ\Publish\API\Repository\Values\ValueObject\SimplifiedRequest;
+use eZ\Publish\Core\MVC\Symfony\Routing\SimplifiedRequest;
 
 class UtilityContext extends MinkContext
 {
