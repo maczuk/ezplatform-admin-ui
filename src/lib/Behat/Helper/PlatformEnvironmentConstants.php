@@ -10,8 +10,6 @@ class PlatformEnvironmentConstants
 {
     /** @var string[] */
     public $values;
-    private $adminURIKey = "ADMIN_URI";
-    private $defaultAdminURI = "admin";
 
     public function __construct()
     {
