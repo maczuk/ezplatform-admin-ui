@@ -20,9 +20,6 @@ abstract class Page
     /** @var string title that we see directly below upper menu */
     protected $pageTitle;
 
-    /** @var string admin URI element */
-    protected $adminURIPath;
-
     /** @var UtilityContext context for interactions with the page */
     protected $context;
 
@@ -35,7 +32,6 @@ abstract class Page
     public function __construct(UtilityContext $context)
     {
         $this->context = $context;
-        $this->adminURIPath = (empty(EzEnvironmentConstants::get("ADMIN_URI"))) ? '' : '/' . EzEnvironmentConstants::get("ADMIN_URI");
     }
 
     /**
