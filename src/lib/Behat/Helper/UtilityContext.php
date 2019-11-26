@@ -40,8 +40,8 @@ class UtilityContext extends MinkContext
         ');
         var_dump($request);
         var_dump('
-        address: %s://%s%s', $request->scheme, $request->host, $request->pathinfo);
-        return sprintf('%s://%s%s', $request->scheme, $request->host, $request->pathinfo);
+        address: %s%s', $request->host, $request->pathinfo);
+        return sprintf('%s%s', $request->host, $request->pathinfo);
     }
 
     /**
