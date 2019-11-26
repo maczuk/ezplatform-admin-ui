@@ -6,7 +6,6 @@
  */
 namespace EzSystems\EzPlatformAdminUi\Behat\PageObject;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\EzEnvironmentConstants;
 use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
 use PHPUnit\Framework\Assert;
 
@@ -53,10 +52,8 @@ abstract class Page
     {
         if (isset($this->siteaccess)) {
             $url = $this->context->reverseMatchRoute($this->siteaccess, $this->route);
-            var_dump($url);
         } else {
             $url = $this->route;
-            var_dump($this->route);
         }
 
         $this->context->visit($url);
