@@ -32,7 +32,9 @@ class UtilityContext extends MinkContext
     {
         $matcher = $this->router->matchByName($siteAccessName)->matcher;
         $matcher->setRequest(new SimplifiedRequest(['scheme' => 'http', 'host' => $this->getMinkParameter('base_url'), 'pathinfo' => $route]));
+        var_dump($matcher);
         $request = $matcher->reverseMatch($siteAccessName)->getRequest();
+        var_dump($request);
         return sprintf('%s://%s%s', $request->scheme, $request->host, $request->pathinfo);
     }
 
