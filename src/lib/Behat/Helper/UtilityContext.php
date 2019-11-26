@@ -39,9 +39,11 @@ class UtilityContext extends MinkContext
         var_dump('request =======================
         ');
         var_dump($request);
+        $explodedHost = explode('//', $request->host);
+        $actualHost = $explodedHost[count($explodedHost) - 1];
         var_dump('
-        address: %s%s', $request->host, $request->pathinfo);
-        return sprintf('%s%s', $request->host, $request->pathinfo);
+        address: %s://%s%s', $request->scheme, $actualHost, $request->pathinfo);
+        return sprintf('%s://%s%s', $request->scheme, $actualHost, $request->pathinfo);
     }
 
     /**
