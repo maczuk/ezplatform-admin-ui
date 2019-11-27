@@ -26,7 +26,7 @@ class ObjectStateGroupsPage extends Page
     {
         parent::__construct($context);
         $this->adminList = ElementFactory::createElement($this->context, AdminList::ELEMENT_NAME, self::PAGE_NAME, LinkedListTable::ELEMENT_NAME);
-        $this->siteaccess = 'admin';
+        $this->siteAccess = 'admin';
         $this->route = '/state/groups';
         $this->pageTitle = self::PAGE_NAME;
         $this->pageTitleLocator = '.ez-header h1';

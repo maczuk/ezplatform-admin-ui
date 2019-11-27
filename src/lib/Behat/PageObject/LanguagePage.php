@@ -29,7 +29,7 @@ class LanguagePage extends Page
         parent::__construct($context);
         $this->adminList = ElementFactory::createElement($this->context, AdminList::ELEMENT_NAME, self::PAGE_NAME . ' information', SimpleTable::ELEMENT_NAME);
         $this->languageName = $languageName;
-        $this->siteaccess = 'admin';
+        $this->siteAccess = 'admin';
         $this->route = '/language/view';
         $this->pageTitle = sprintf('Language "%s"', $languageName);
         $this->pageTitleLocator = '.ez-header h1';

@@ -16,6 +16,9 @@ abstract class Page
     /** @var string Route under which the Page is available */
     protected $route;
 
+    /** @var string SiteAccess name */
+    public $siteaccess;
+
     /** @var string title that we see directly below upper menu */
     protected $pageTitle;
 
@@ -50,8 +53,8 @@ abstract class Page
      */
     public function open(bool $verifyIfLoaded = true): void
     {
-        if (isset($this->siteaccess)) {
-            $url = $this->context->reverseMatchRoute($this->siteaccess, $this->route);
+        if (isset($this->siteAccess)) {
+            $url = $this->context->reverseMatchRoute($this->siteAccess, $this->route);
         } else {
             $url = $this->route;
         }
